@@ -30,8 +30,8 @@ public class SwaggerConfig {
 
     private ApiInfo infoApi() {
         return new ApiInfoBuilder()
-                .title("Spring Boot REST API")
-                .description("Example API")
+                .title("Spring Boot API")
+                .description("API Demo")
                 .version("1.0.0")
                 .build();
     }
