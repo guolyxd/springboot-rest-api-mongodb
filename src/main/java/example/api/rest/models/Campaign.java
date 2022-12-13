@@ -1,6 +1,7 @@
 package example.api.rest.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,6 +14,8 @@ import static example.api.rest.utils.ApiConstants.CAMPAIGNS_SEQUENCE_NAME;
 /**
  * Campaign model collection.
  */
+
+@Data
 @Document(collection = "campaigns")
 @JsonIgnoreProperties(value="campaignStatus", allowGetters= true, ignoreUnknown = true)
 public class Campaign extends BaseDocument {
@@ -38,53 +41,53 @@ public class Campaign extends BaseDocument {
     public Campaign () {
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setCampaignStatus(CampaignStatusType campaignStatus) {
-        this.campaignStatus = campaignStatus;
-    }
-
-    public CampaignStatusType getCampaignStatus() {
-        return campaignStatus;
-    }
-
-    @Override
-    public String toString() {
-        return "Campaign{" +
-                "email='" + email + '\'' +
-                ", description='" + description + '\'' +
-                ", campaignStatus=" + campaignStatus +
-                "} " + super.toString();
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public String getUrl() {
+//        return url;
+//    }
+//
+//    public void setUrl(String url) {
+//        this.url = url;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public void setCampaignStatus(CampaignStatusType campaignStatus) {
+//        this.campaignStatus = campaignStatus;
+//    }
+//
+//    public CampaignStatusType getCampaignStatus() {
+//        return campaignStatus;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Campaign{" +
+//                "email='" + email + '\'' +
+//                ", description='" + description + '\'' +
+//                ", campaignStatus=" + campaignStatus +
+//                "} " + super.toString();
+//    }
 
 }
