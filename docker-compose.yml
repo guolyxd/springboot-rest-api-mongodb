@@ -1,10 +1,11 @@
 version: "3.7"
 services:
+
   restapi:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: my_restapi
+    container_name: restapi_server
     environment:
       DB_USER: devuser
       DB_PWD: devuser
@@ -18,9 +19,10 @@ services:
       - 8080:8080
     depends_on:
       - mongo-database
+      
   mongo-database:
     image: mongo
-    container_name: my_mongodb
+    container_name: mongodb_server
     environment: 
       MONGO_INITDB_ROOT_USERNAME: root 
       MONGO_INITDB_ROOT_PASSWORD: root 
