@@ -16,7 +16,7 @@ services:
     volumes:
       - ./data/applogs:/tmp/logs
     ports:
-      - 8080:8080
+      - 8090:8080
     depends_on:
       - mongo-database
       
